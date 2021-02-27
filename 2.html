@@ -5,12 +5,45 @@
 <meta charset="utf-8">
 </head>
 
+<!-- 만약 방문했던 링크는 회색,  현재 링크는 빨강으로 나타내고 싶다면?-->
+<!-- class 사용.  class 안에 포함ㄷ괴는 것들만 적용시키는 법 사용-->
+<style>
+  a {
+  color :black;
+  text-decoration: none;
+  }
+  h1 {
+    font-size: 60px;
+    text-align: center;
+  }
+  .active{
+    color:red;
+  }
+
+  #active{
+    color:red;
+  }
+
+  .saw{
+    color:gray;
+  }
+</style>
+<!-- 태그 뿐만 아니라 class, id도 따로 적용가능하다 -->
+<!-- 여러개의 class를 동시에 가질 수 있으나, style 내의 순서에따라 적용되는 것이 달라진다 ( 위의 경우 .saw가 나중에 있으면
+      .saw를 먹고  .active가 나중에 있으면 .active가 적용된다)-->
+<!-- id도 존재하는데,  id와 class가 싸우면 id가 이긴다.  순서 상관없이 id 우선-->
+<!-- tag 선택자와 class가 싸우면 class가 이긴다.-->
+<!-- 만약 모두 동일한 선택자라면, 마지막에 있는게 이긴다.-->
+<!-- id는 고유하므로  단 한번만 쓰여야한다.(중복되선 안된다)-->
+
+
+
 <body>
   <h1><a href="index.html">WEB</a></h1>
   <ol>
-    <li><a href="1.html">HTML</a></li>
-    <li><a href="2.html">CSS</a></li>
-    <li><a href="3.html">JavaScript</a></li>
+    <li><a href="1.html" class="saw">HTML</a></li>
+    <li><a href="2.html" class="saw active">CSS</a></li>  <!-- class라고하는 속성의 값은 여러개가 들어올 수 있으며 띄어쓰기로 구분한다.-->
+    <li><a href="3.html" class="saw" id="active">JavaScript</a></li>
   </ol>
 
   <ul>
@@ -33,3 +66,34 @@ The name cascading comes from the specified priority scheme to determine which s
 The CSS specifications are maintained by the World Wide Web Consortium (W3C). Internet media type (MIME type) text/css is registered for use with CSS by RFC 2318 (March 1998). The W3C operates a free CSS validation service for CSS documents.[5]
 
 In addition to HTML, other markup languages support the use of CSS including XHTML, plain XML, SVG, and XUL.</p>
+
+
+
+<BODY>
+
+
+   화면에 공백을 사용할 경우는&nbsp;문자를 삽입하거나
+
+   띄어 쓰기를 여러번 표현 하고 싶을 경우&nbsp;&nbsp;&nbsp;&nbsp;을 여러번 사용해야 띄어쓰기를 할 수 있습니다.
+
+   <PRE>
+
+   pre 태그 안에서는  두번 띄어쓰거나   세번띄어쓰거나               이만큼 띄어쓰기를 해도 모두 그대로 출력됩니다.
+
+   </PRE>
+
+   <XMP>
+
+   xmp 태그는 pre 태그의 역할을 그      대      로 하면서
+
+   <div></div> 등과 같은 다른 태그들도 문자로 출력합니다.
+
+   </XMP>
+
+
+
+</BODY>
+
+
+
+출처: https://cofs.tistory.com/63 [CofS]

@@ -5,11 +5,22 @@
 <meta charset="utf-8">
 </head>
 
+<style>
+  a {
+    color:black;
+    text-decoration: none;
+  }
+  h1 {
+    font-size: 60px;
+    text-align: center;
+  }
+</style> <!-- 태그를 이용한 방법.  a는 선택자이며 declaration이라고도 함. 해당 태그에 영향을 줄 것이다.  -->
+
 <body>
   <h1><a href="index.html">WEB</a></h1>
   <ol>
     <li><a href="1.html">HTML</a></li>
-    <li><a href="2.html">CSS</a></li>
+    <li><a href="2.html" style= "color:red; text-decoration:underline;" >CSS</a></li>  <!-- 속성을 넣어주는 방법-->
     <li><a href="3.html">JavaScript</a></li>
   </ol>
 
@@ -21,7 +32,7 @@
 
 
 
-  <h2>HTML</h2>
+  <h2><input type="checkbox" >HTML</h2>
   <p><a href="https://www.w3.org/TR/html52/" target="_blank" title="html5 specification">
   Hyper text markup Language (html)</a> is the standard markup Language
   <strong>for creatingweb pages and <u>web application </u>  </strong>
@@ -36,6 +47,49 @@
   paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags,
   written using angle brackets.</p>
 
+
+  <h2><input type="checkbox">동영상 퍼오기</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/7T7r_oSp0SE" frameborder="0" allow="accelerometer;
+  autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+  <h2><input type="checkbox">댓글기능 가져오기 : 백엔드 및 database 기술 필요</h2>
+  <p><div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://kdoro.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+<h2><input type="checkbox">채팅기능 추가 : 백엔드 및 database 기술 필요</h2>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6032a2c3918aa26127411ac5/1ev2snj8p';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 
   <table>
     <tr>
