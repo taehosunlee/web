@@ -1,0 +1,53 @@
+a {
+color :black;
+text-decoration: none;  /* 링크있으면 원래 밑줄 생기는데 그거 없애줌*/
+}
+h1 {
+  font-size: 60px;
+  text-align: center;
+  border-bottom: 2px solid gray;
+  padding : 5px;
+  margin : 0px;
+}
+.saw{ /*클래스로 지정해서 속성 넣어줄 수 있다.*/
+}
+
+
+#grid ol {  /*부모가 gird인 ol 태그만 선택*/
+  border-right:2px solid gray;
+  width:100px;
+  margin : 0px;
+  padding : 15px;
+  padding-left: 32px;
+}
+
+body {
+  background-color: white;
+}
+
+#grid {
+  display : grid;
+  grid-template-columns: 150px 1fr 1fr;
+} /*column은 열 raw는 행*/
+
+#grid #article{  /*걍 #article만 써도 되긴 하지만, 부모를 보여주기위해 이렇게도 쓴다.*/
+  padding-left: 25px;
+}
+
+@media(max-width:600px){
+    #grid {
+      display : block;  /* 600px보다 작을 때, grid가 블록으로 바뀜.*/
+    }
+
+    #grid ol {
+      border-right:none;
+    }
+
+    h1 {
+      font-size: 30px;
+      text-align: center;
+      border-bottom: none;
+    }
+
+
+}

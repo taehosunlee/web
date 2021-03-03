@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    #grid {
+      border:5px solid pink;
+      display:grid;
+      grid-template-columns: 150px 1fr; /*첫번째 칼럼(NAVIGATION)은 150PX을 쓰고, 두번째 칼럼(ARTICLE)은 남은 화면 다 쓴다.*/
+      /*만약 2fr 1fr로 하면, 화면 전체를 3fr이라고 했을 때  2:1로 나눈다.*/
+      font-weight: bold;
+    }
+    div {
+      border : 5px solid gray;
+    }
+
+  </style>
+
+
+
+
+</head>
+<body>
+  <div id="grid">  <!-- 여러분이 이 두개의 태그를 나란히 쓰고싶으면, 그 태그들을 감싸는 부모태그가 필요. grid라는 class로 묶어준다.-->
+    <div>NAVIGATION</div>  <!-- div : 디자인을 위해 아무 의미없는 div.  division을 넣어준다.  div 태그는 기본적으로 block level이라  화면 전체를 쓴다.-->
+    <div>ARTICLE HTML elements ar the building blocks of HTML pages. With HTML constructs, images and other
+    objects, such as interactive forms, may be emdbedded into the rendered page. it provides a means
+    to create structured documents by denoting structural semantics for text such as headings,
+    paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags,</div> <!-- span : div와 동일한 기능이나,  INLINE LEVEL.  경우에 따라 DIV, SPAN 나눠서 쓴다-->
+  </div>
+</body>
+</html>

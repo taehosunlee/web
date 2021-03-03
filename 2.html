@@ -10,22 +10,56 @@
 <style>
   a {
   color :black;
-  text-decoration: none;
+  text-decoration: none;  /* 링크있으면 원래 밑줄 생기는데 그거 없애줌*/
   }
   h1 {
     font-size: 60px;
     text-align: center;
+    border-bottom: 2px solid gray;
+    padding : 5px;
+    margin : 0px;
   }
-  .active{
-    color:red;
-  }
-
-  #active{
-    color:red;
+  .saw{ /*클래스로 지정해서 속성 넣어줄 수 있다.*/
   }
 
-  .saw{
-    color:gray;
+
+  #grid ol {  /*부모가 gird인 ol 태그만 선택*/
+    border-right:2px solid gray;
+    width:100px;
+    margin : 0px;
+    padding : 15px;
+    padding-left: 32px;
+  }
+
+  body {
+    background-color: white;
+  }
+
+  #grid {
+    display : grid;
+    grid-template-columns: 150px 1fr;
+  } /*column은 열 raw는 행*/
+
+  #grid #article{  /*걍 #article만 써도 되긴 하지만, 부모를 보여주기위해 이렇게도 쓴다.*/
+    padding-left: 25px;
+  }
+
+  @media(max-width:600px){
+      #grid {
+        display : block;  /* 600px보다 작을 때, grid가 블록으로 바뀜.*/
+      }
+
+      #grid ol {
+        border-right:none;
+      }
+
+      h1 {
+        font-size: 30px;
+        text-align: center;
+        border-bottom: none;
+      }
+
+
   }
 </style>
 <!-- 태그 뿐만 아니라 class, id도 따로 적용가능하다 -->
@@ -38,62 +72,21 @@
 
 
 
-<body>
-  <h1><a href="index.html">WEB</a></h1>
-  <ol>
-    <li><a href="1.html" class="saw">HTML</a></li>
-    <li><a href="2.html" class="saw active">CSS</a></li>  <!-- class라고하는 속성의 값은 여러개가 들어올 수 있으며 띄어쓰기로 구분한다.-->
-    <li><a href="3.html" class="saw" id="active">JavaScript</a></li>
-  </ol>
+<body>  <!--ol 태그와 css 내용 태그를 같이 묶어주고 싶다. 그 경우 div를 사용해서 <p></p> 태그를 div화 시켜주고, ol와 div를 서로 묶어주는 부모태그를 또 만들어준다.-->
+  <h1><a href="index.html" style= "color:#4ca1e8;">WEB</a></h1>
+  <div id="grid">  <!-- grid class로 묶어준 후, 첫번째 colum(ol)은 150px  2번째 칼럼은 1fr로 지정.  h2나 p를 따로 칼럼으로 만들 수도 있으나, 뜻있는 태그들은 보통 칼럼으로 만들지 않고 div로 구분한다.-->
+      <ol>
+        <li><a href="1.html" class="saw">HTML</a></li>
+        <li><a href="2.html" style="color:red;">CSS</a></li>  <!-- class라고하는 속성의 값은 여러개가 들어올 수 있으며 띄어쓰기로 구분한다.-->
+        <li><a href="3.html">JavaScript</a></li>
+      </ol>
 
-  <ul>
-    <li>1. HTML</li>
-    <li>2. CSS</li>
-    <li>3. JavaScript</li>
-  </ul>
+    <div id="article">
+      <h2>CSS</h2>
+      <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
 
-
-
-  <h2>CSS</h2>
-  <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
-
-CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.[3] This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file which reduces complexity and repetition in the structural content as well as enabling the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.
-
-Separation of formatting and content also makes it feasible to present the same markup page in different styles for different rendering methods, such as on-screen, in print, by voice (via speech-based browser or screen reader), and on Braille-based tactile devices. CSS also has rules for alternate formatting if the content is accessed on a mobile device.[4]
-
-The name cascading comes from the specified priority scheme to determine which style rule applies if more than one rule matches a particular element. This cascading priority scheme is predictable.
-
-The CSS specifications are maintained by the World Wide Web Consortium (W3C). Internet media type (MIME type) text/css is registered for use with CSS by RFC 2318 (March 1998). The W3C operates a free CSS validation service for CSS documents.[5]
-
-In addition to HTML, other markup languages support the use of CSS including XHTML, plain XML, SVG, and XUL.</p>
-
-
-
-<BODY>
-
-
-   화면에 공백을 사용할 경우는&nbsp;문자를 삽입하거나
-
-   띄어 쓰기를 여러번 표현 하고 싶을 경우&nbsp;&nbsp;&nbsp;&nbsp;을 여러번 사용해야 띄어쓰기를 할 수 있습니다.
-
-   <PRE>
-
-   pre 태그 안에서는  두번 띄어쓰거나   세번띄어쓰거나               이만큼 띄어쓰기를 해도 모두 그대로 출력됩니다.
-
-   </PRE>
-
-   <XMP>
-
-   xmp 태그는 pre 태그의 역할을 그      대      로 하면서
-
-   <div></div> 등과 같은 다른 태그들도 문자로 출력합니다.
-
-   </XMP>
-
-
-
-</BODY>
-
-
-
-출처: https://cofs.tistory.com/63 [CofS]
+        CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.[3] This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file which reduces complexity and repetition in the structural content as well as enabling the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.
+      </p>
+    </div>
+  </div>
+</body>

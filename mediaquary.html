@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>미디어쿼리(반응형)</title>
+
+    <style>
+      div{
+        border : 10px solid green;
+        font-size : 60px;
+      }
+
+       /*screen width > 800px   이면 display 안보이게 하고싶다면?*/
+       /*미디어 쿼리 : 스마트폰 가로모드 세로모드 등 어떤 조건을 만족할때만 아래 css내용을 적용할 때 사용 */
+      @media(min-width:800px) {
+      div{
+        display:none;
+      }
+    }
+    </style>
+
+
+
+  </head>
+  <body>
+    <div>
+      Responsive
+
+    </div>
+  </body>
+</html>
